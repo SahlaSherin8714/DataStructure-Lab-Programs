@@ -3,7 +3,7 @@
 void display_arr(int arr[],int size)
 {
 	printf("array elements are:");
-	for(int i=0;i<=n;i++)
+	for(int i=1;i<=size;i++)
 	{
 		printf("%d",arr[i]);
 		}
@@ -43,23 +43,32 @@ int main()
 	int arr1[10],arr2[10],arr3[10];
 	printf("enter the size of array1:");
 	scanf("%d",&size1);
-	for(i=0;i<=size1;i++)
+	for(i=1;i<=size1;i++)
 	{
 		printf("enter the %d element",i);
-		scanf("%d",&arr[i]);	
+		scanf("%d",&arr1[i]);	
 	}
 		
 	printf("enter the size of array2:");
 	scanf("%d",&size2);
-	for(j=0;j<=size2;j++)
+	for(j=1;j<=size2;j++)
 	{
 		printf("enter the %d element",j);
-		scanf("%d",&arr[j]);	
+		scanf("%d",&arr2[j]);	
 	}
 	printf("\nSorted Array1");
-	display_array(arr1,size1)
+	sort_arr(arr1,size1);
+	display_arr(arr1,size1);
+	
 	printf("\nSorted Array2");
-	display_array(arr2,size2)
+	sort_arr(arr2,size2);
+	display_arr(arr2,size2);
+	
+	printf("\nMerged Array");
+	merge_arr(arr1,arr2,arr3,size1,size2);
+	sort_arr(arr3,size1+size2);
+	display_arr(arr3,size1+size2);
+	
 	
 	
 
